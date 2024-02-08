@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class World {
     Player player;
@@ -42,6 +43,13 @@ public class World {
                 g.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
             }
         }
+
+        food.draw(g);
+        player.draw(g);
     }
 
+
+    public void keyPressed(KeyEvent e) {
+        player.keyPressed(e);
+    }
 }

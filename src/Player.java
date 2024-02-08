@@ -23,7 +23,7 @@ public class Player implements gameObject {
     public Player(int x, int y, int tileSize) {
         this.xPos = x;
         this.yPos = y;
-
+        this.tileSize = tileSize;
     }
 
     // METHODS
@@ -44,7 +44,7 @@ public class Player implements gameObject {
 
     public void draw(Graphics g) {
         g.setColor(new Color(131, 75, 169, 186));
-        g.fillRect(xPos,yPos, 50, 50);
+        g.fillRect(xPos * tileSize,yPos * tileSize, tileSize, tileSize);
     }
 
     @Override
@@ -58,10 +58,10 @@ public class Player implements gameObject {
 
     private void movePlayer() {
         switch (snakeDirection) {
-            case North -> yPos -= 50;
-            case South -> yPos += 50;
-            case West -> xPos -= 50;
-            case East -> xPos += 50;
+            case North -> yPos -= 1;
+            case South -> yPos += 1;
+            case West -> xPos -= 1;
+            case East -> xPos += 1;
         }
     }
 }

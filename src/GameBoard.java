@@ -60,7 +60,7 @@ public class GameBoard extends JPanel implements KeyListener, ActionListener {
      */
     @Override
     public void keyPressed(KeyEvent e) {
-        player.keyPressed(e);
+        world.keyPressed(e);
 
     }
 
